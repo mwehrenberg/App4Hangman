@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="App_4___Hangman" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,83 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Chalkboard-background-1" translatesAutoresizingMaskIntoConstraints="NO" id="XQ8-JS-xiz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="US History Hangman" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Frk-jA-ceN">
+                                <rect key="frame" x="37" y="43" width="300" height="132"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="132" id="Fdd-U5-K6G"/>
+                                    <constraint firstAttribute="width" constant="300" id="MUq-U5-Led"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAi-td-x3u">
+                                <rect key="frame" x="117.5" y="308" width="140" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="M8J-bI-8l6"/>
+                                    <constraint firstAttribute="height" constant="40" id="pTI-o4-AVO"/>
+                                </constraints>
+                                <state key="normal" title="Play!" backgroundImage="button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="4QF-FJ-PkP" kind="show" id="e7L-rj-J7H"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Frk-jA-ceN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-224.5" id="2LW-Lc-pzM"/>
+                            <constraint firstAttribute="trailing" secondItem="XQ8-JS-xiz" secondAttribute="trailing" id="Lin-pX-Dl9"/>
+                            <constraint firstItem="UAi-td-x3u" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-5.5" id="Ojo-Gv-ree"/>
+                            <constraint firstItem="XQ8-JS-xiz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Vwi-qk-vGI"/>
+                            <constraint firstItem="UAi-td-x3u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XqE-Qy-7uo"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XQ8-JS-xiz" secondAttribute="bottom" id="ey4-ck-wlV"/>
+                            <constraint firstItem="XQ8-JS-xiz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="loJ-h8-vfK"/>
+                            <constraint firstItem="Frk-jA-ceN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="onx-sw-99v"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="85.599999999999994" y="38.23088455772114"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="bkY-QI-TOZ">
+            <objects>
+                <viewController id="4QF-FJ-PkP" customClass="SecondViewController" customModule="App_4___Hangman" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NHv-HW-9Cw"/>
+                        <viewControllerLayoutGuide type="bottom" id="MVH-ZK-tay"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cc4-pa-6vQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Chalkboard-background-1" translatesAutoresizingMaskIntoConstraints="NO" id="Cyv-pY-UIb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MVH-ZK-tay" firstAttribute="top" secondItem="Cyv-pY-UIb" secondAttribute="bottom" id="2ZB-BZ-Mep"/>
+                            <constraint firstAttribute="trailing" secondItem="Cyv-pY-UIb" secondAttribute="trailing" id="BqP-h9-cyE"/>
+                            <constraint firstItem="Cyv-pY-UIb" firstAttribute="leading" secondItem="cc4-pa-6vQ" secondAttribute="leading" id="mN6-ro-mGr"/>
+                            <constraint firstItem="Cyv-pY-UIb" firstAttribute="top" secondItem="cc4-pa-6vQ" secondAttribute="top" id="pVF-0s-yn8"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ne-gB-06r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="762" y="38"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Chalkboard-background-1" width="1280" height="1600"/>
+        <image name="button" width="100" height="40"/>
+    </resources>
 </document>
