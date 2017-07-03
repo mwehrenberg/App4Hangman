@@ -23,9 +23,11 @@ class SecondViewController: UIViewController {
     var stringAfterLetter = ""
     var stringAfterLetterPlaces = 0
     
+    var changingArrayForWord = [Character]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        wordGenerator = ["HAMILTONE", "JEFFERSON", "HEY", "WOWOWE", "YUPE"]
+        wordGenerator = ["WE"]
         randomIndex = Int(arc4random_uniform(UInt32(wordGenerator.count)))
         wordUsedForCurrentGame = wordGenerator[randomIndex]
         currentWordLetters = [Character](wordUsedForCurrentGame.characters)
@@ -41,15 +43,26 @@ class SecondViewController: UIViewController {
     
     func testForLetterInWord(givenLetter : Character) {
         if currentWordLetters.contains(givenLetter){
-            print("YES")
+//            print("YES")
+//            indexOfLetterChosen = currentWordLetters.index(of: givenLetter)!
+//            print(indexOfLetterChosen)
+//            currentWordLetters.remove(at : indexOfLetterChosen)
+//            print(currentWordLetters)
+//            stringBeforeLetter = String(repeating : "_ ", count : indexOfLetterChosen)
+//            stringAfterLetterPlaces = numberOfCharactersInWord - (indexOfLetterChosen + 1)
+//            stringAfterLetter = String(repeating : "_ ", count : stringAfterLetterPlaces)
+//            wordInUse.text = stringBeforeLetter + String(givenLetter) + " " + stringAfterLetter
+//            let tempArray = [Character](wordInUse.text!.characters)
+//            print(tempArray)
+            
+            changingArrayForWord = [Character](emptyInitializer.characters)
+            //print(changingArrayForWord)
+            //changingArrayForWord = changingArrayForWord.filter{$0 != " "}
+            print(changingArrayForWord)
             indexOfLetterChosen = currentWordLetters.index(of: givenLetter)!
-            print(indexOfLetterChosen)
-            currentWordLetters.remove(at : indexOfLetterChosen)
-            print(currentWordLetters)
-            stringBeforeLetter = String(repeating : "_ ", count : indexOfLetterChosen)
-            stringAfterLetterPlaces = numberOfCharactersInWord - (indexOfLetterChosen + 1)
-            stringAfterLetter = String(repeating : "_ ", count : stringAfterLetterPlaces)
-            wordInUse.text = stringBeforeLetter + String(givenLetter) + " " + stringAfterLetter
+            changingArrayForWord[indexOfLetterChosen * 2] = givenLetter
+            print(changingArrayForWord)
+            wordInUse.text = String(changingArrayForWord)
         }
     }
     
