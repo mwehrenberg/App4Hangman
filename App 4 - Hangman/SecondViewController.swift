@@ -11,6 +11,7 @@ import UIKit
 class SecondViewController: UIViewController {
     
     @IBOutlet weak var wordInUse: UILabel!
+    @IBOutlet weak var hangerView: UIImageView!
     
     var wordGenerator = [String]()
     var randomIndex = 0
@@ -27,7 +28,6 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        wordGenerator = ["HAMILTON"]
         randomIndex = Int(arc4random_uniform(UInt32(wordGenerator.count)))
         wordUsedForCurrentGame = wordGenerator[randomIndex]
         currentWordLetters = [Character](wordUsedForCurrentGame.characters)
@@ -48,6 +48,11 @@ class SecondViewController: UIViewController {
             changingArrayForWord[indexOfLetterChosen * 2] = givenLetter
             wordInUse.text = String(changingArrayForWord)
         }
+//        else {
+//            switch (hangerView){
+//                
+//            }
+//        }
     }
     
     @IBAction func onQ(_ sender: Any) {
