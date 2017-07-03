@@ -22,7 +22,7 @@ class ViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dvc = segue.destination as! SecondViewController
-        dvc.wordGenerator = ["FEED"]
+        dvc.wordGenerator = ["HAMILTON", "PANCAKE", "STRAWBERRY", "CHALKBOARD", "PICTURE", "WASHINGTON", "PRESIDENT", "DOLL", "TELEVISION", "BASKET", "LIPSTICK", "EARRINGS", "ENGAGEMENT", "WINDOW", "TRAVEL", "AMERICA", "FAMILY", "GREENHOUSE", "FIREPLACE", "NEWSPAPER", "SURFBOARD", "PLAYGROUND"]
     }
 
 }
