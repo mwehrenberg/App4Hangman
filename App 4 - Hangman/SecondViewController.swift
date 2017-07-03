@@ -18,6 +18,10 @@ class SecondViewController: UIViewController {
     var currentWordLetters = [Character]()
     var numberOfCharactersInWord = 0
     var emptyInitializer = ""
+    var indexOfLetterChosen = 0
+    var stringBeforeLetter = ""
+    var stringAfterLetter = ""
+    var stringAfterLetterPlaces = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +31,7 @@ class SecondViewController: UIViewController {
         currentWordLetters = [Character](wordUsedForCurrentGame.characters)
         print(currentWordLetters)
         numberOfCharactersInWord = wordUsedForCurrentGame.characters.count
-        emptyInitializer = String(repeating: "_ ", count: numberOfCharactersInWord)
+        emptyInitializer = String(repeating : "_ ", count : numberOfCharactersInWord)
         wordInUse.text = emptyInitializer
     }
 
@@ -38,6 +42,14 @@ class SecondViewController: UIViewController {
     func testForLetterInWord(givenLetter : Character) {
         if currentWordLetters.contains(givenLetter){
             print("YES")
+            indexOfLetterChosen = currentWordLetters.index(of: givenLetter)!
+            print(indexOfLetterChosen)
+            currentWordLetters.remove(at : indexOfLetterChosen)
+            print(currentWordLetters)
+            stringBeforeLetter = String(repeating : "_ ", count : indexOfLetterChosen)
+            stringAfterLetterPlaces = numberOfCharactersInWord - (indexOfLetterChosen + 1)
+            stringAfterLetter = String(repeating : "_ ", count : stringAfterLetterPlaces)
+            wordInUse.text = stringBeforeLetter + String(givenLetter) + " " + stringAfterLetter
         }
     }
     
