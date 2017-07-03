@@ -48,11 +48,27 @@ class SecondViewController: UIViewController {
             changingArrayForWord[indexOfLetterChosen * 2] = givenLetter
             wordInUse.text = String(changingArrayForWord)
         }
-//        else {
-//            switch (hangerView){
-//                
-//            }
-//        }
+        else {
+            if hangerView.image == UIImage(named: "Hangman-0") {
+                hangerView.image = UIImage(named: "Hangman-1")
+            }
+            else if hangerView.image == UIImage(named: "Hangman-1") {
+                hangerView.image = UIImage(named: "Hangman-2")
+            }
+            else if hangerView.image == UIImage(named: "Hangman-2") {
+                hangerView.image = UIImage(named: "Hangman-3")
+            }
+            else if hangerView.image == UIImage(named: "Hangman-3") {
+                hangerView.image = UIImage(named: "Hangman-4")
+            }
+            else if hangerView.image == UIImage(named: "Hangman-4") {
+                hangerView.image = UIImage(named: "Hangman-5")
+            }
+            else if hangerView.image == UIImage(named: "Hangman-5") {
+                hangerView.image = UIImage(named: "Hangman-6")
+                //alert for game over
+            }
+        }
     }
     
     @IBAction func onQ(_ sender: Any) {

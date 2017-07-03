@@ -482,7 +482,7 @@
                                     <action selector="onZ:" destination="4QF-FJ-PkP" eventType="touchUpInside" id="6MO-GL-kZF"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hanger" translatesAutoresizingMaskIntoConstraints="NO" id="ZsX-cY-4wo">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hangman-0" translatesAutoresizingMaskIntoConstraints="NO" id="ZsX-cY-4wo">
                                 <rect key="frame" x="30" y="20" width="314" height="314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="314" id="Nnq-Do-ScX"/>
@@ -622,8 +622,8 @@
     </scenes>
     <resources>
         <image name="Chalkboard-background-1" width="1280" height="1600"/>
+        <image name="Hangman-0" width="256" height="256"/>
         <image name="button" width="100" height="40"/>
         <image name="button-1" width="40" height="40"/>
-        <image name="hanger" width="800" height="600"/>
     </resources>
 </document>
