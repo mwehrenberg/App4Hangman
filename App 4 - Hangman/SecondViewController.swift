@@ -27,7 +27,7 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        wordGenerator = ["WE"]
+        wordGenerator = ["HAMILTON"]
         randomIndex = Int(arc4random_uniform(UInt32(wordGenerator.count)))
         wordUsedForCurrentGame = wordGenerator[randomIndex]
         currentWordLetters = [Character](wordUsedForCurrentGame.characters)
@@ -35,6 +35,7 @@ class SecondViewController: UIViewController {
         numberOfCharactersInWord = wordUsedForCurrentGame.characters.count
         emptyInitializer = String(repeating : "_ ", count : numberOfCharactersInWord)
         wordInUse.text = emptyInitializer
+        changingArrayForWord = [Character](emptyInitializer.characters)
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,35 +44,111 @@ class SecondViewController: UIViewController {
     
     func testForLetterInWord(givenLetter : Character) {
         if currentWordLetters.contains(givenLetter){
-//            print("YES")
-//            indexOfLetterChosen = currentWordLetters.index(of: givenLetter)!
-//            print(indexOfLetterChosen)
-//            currentWordLetters.remove(at : indexOfLetterChosen)
-//            print(currentWordLetters)
-//            stringBeforeLetter = String(repeating : "_ ", count : indexOfLetterChosen)
-//            stringAfterLetterPlaces = numberOfCharactersInWord - (indexOfLetterChosen + 1)
-//            stringAfterLetter = String(repeating : "_ ", count : stringAfterLetterPlaces)
-//            wordInUse.text = stringBeforeLetter + String(givenLetter) + " " + stringAfterLetter
-//            let tempArray = [Character](wordInUse.text!.characters)
-//            print(tempArray)
-            
-            changingArrayForWord = [Character](emptyInitializer.characters)
-            //print(changingArrayForWord)
-            //changingArrayForWord = changingArrayForWord.filter{$0 != " "}
-            print(changingArrayForWord)
             indexOfLetterChosen = currentWordLetters.index(of: givenLetter)!
             changingArrayForWord[indexOfLetterChosen * 2] = givenLetter
-            print(changingArrayForWord)
             wordInUse.text = String(changingArrayForWord)
         }
     }
     
     @IBAction func onQ(_ sender: Any) {
+        testForLetterInWord(givenLetter: "Q")
     }
     @IBAction func onW(_ sender: Any) {
+        testForLetterInWord(givenLetter: "W")
     }
     @IBAction func onE(_ sender: Any) {
         testForLetterInWord(givenLetter: "E")
     }
+    @IBAction func onR(_ sender: Any) {
+        testForLetterInWord(givenLetter: "R")
+    }
+    @IBAction func onT(_ sender: Any) {
+        testForLetterInWord(givenLetter: "T")
+    }
+    @IBAction func onY(_ sender: Any) {
+        testForLetterInWord(givenLetter: "Y")
+    }
+    @IBAction func onU(_ sender: Any) {
+        testForLetterInWord(givenLetter: "U")
+    }
+    @IBAction func onI(_ sender: Any) {
+        testForLetterInWord(givenLetter: "I")
+    }
+    @IBAction func onO(_ sender: Any) {
+        testForLetterInWord(givenLetter: "O")
+    }
+    @IBAction func onP(_ sender: Any) {
+        testForLetterInWord(givenLetter: "P")
+    }
+    @IBAction func onA(_ sender: Any) {
+        testForLetterInWord(givenLetter: "A")
+    }
+    @IBAction func onS(_ sender: Any) {
+        testForLetterInWord(givenLetter: "S")
+    }
+    @IBAction func onD(_ sender: Any) {
+        testForLetterInWord(givenLetter: "D")
+    }
+    @IBAction func onF(_ sender: Any) {
+        testForLetterInWord(givenLetter: "F")
+    }
+    @IBAction func onG(_ sender: Any) {
+        testForLetterInWord(givenLetter: "G")
+    }
+    @IBAction func onH(_ sender: Any) {
+        testForLetterInWord(givenLetter: "H")
+    }
+    @IBAction func onJ(_ sender: Any) {
+        testForLetterInWord(givenLetter: "J")
+    }
+    @IBAction func onK(_ sender: Any) {
+        testForLetterInWord(givenLetter: "K")
+    }
+    @IBAction func onL(_ sender: Any) {
+        testForLetterInWord(givenLetter: "L")
+    }
+    @IBAction func onZ(_ sender: Any) {
+        testForLetterInWord(givenLetter: "Z")
+    }
+    @IBAction func onX(_ sender: Any) {
+        testForLetterInWord(givenLetter: "X")
+    }
+    @IBAction func onC(_ sender: Any) {
+        testForLetterInWord(givenLetter: "C")
+    }
+    @IBAction func onV(_ sender: Any) {
+        testForLetterInWord(givenLetter: "V")
+    }
+    @IBAction func onB(_ sender: Any) {
+        testForLetterInWord(givenLetter: "B")
+    }
+    @IBAction func onN(_ sender: Any) {
+        testForLetterInWord(givenLetter: "N")
+    }
+    @IBAction func onM(_ sender: Any) {
+        testForLetterInWord(givenLetter: "M")
+    }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
