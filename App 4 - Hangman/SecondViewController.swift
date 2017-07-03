@@ -24,7 +24,6 @@ class SecondViewController: UIViewController {
     var stringBeforeLetter = ""
     var stringAfterLetter = ""
     var stringAfterLetterPlaces = 0
-    
     var changingArrayForWord = [Character]()
     
     override func viewDidLoad() {
@@ -68,8 +67,22 @@ class SecondViewController: UIViewController {
             }
             else if hangerView.image == UIImage(named: "Hangman-5") {
                 hangerView.image = UIImage(named: "Hangman-6")
-                //alert for game over
                 resultDisplayer.text = "Game Over"
+                let alert = UIAlertController(title: "Game Over. Play again?", message: nil, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                    self.hangerView.image = UIImage(named: "Hangman-0")
+                    self.randomIndex = Int(arc4random_uniform(UInt32(self.wordGenerator.count)))
+                    self.wordUsedForCurrentGame = self.wordGenerator[self.randomIndex]
+                    self.currentWordLetters = [Character](self.wordUsedForCurrentGame.characters)
+                    print(self.currentWordLetters)
+                    self.numberOfCharactersInWord = self.wordUsedForCurrentGame.characters.count
+                    self.emptyInitializer = String(repeating : "_ ", count : self.numberOfCharactersInWord)
+                    self.wordInUse.text = self.emptyInitializer
+                    self.changingArrayForWord = [Character](self.emptyInitializer.characters)
+                    self.resultDisplayer.text = ""
+                }
+                alert.addAction(okAction)
+                present(alert, animated: true, completion: nil)
             }
         }
     }
@@ -80,6 +93,21 @@ class SecondViewController: UIViewController {
         }
         else {
             resultDisplayer.text = "You Won!"
+            let alert = UIAlertController(title: "You win! Play again?", message: nil, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                self.hangerView.image = UIImage(named: "Hangman-0")
+                self.randomIndex = Int(arc4random_uniform(UInt32(self.wordGenerator.count)))
+                self.wordUsedForCurrentGame = self.wordGenerator[self.randomIndex]
+                self.currentWordLetters = [Character](self.wordUsedForCurrentGame.characters)
+                print(self.currentWordLetters)
+                self.numberOfCharactersInWord = self.wordUsedForCurrentGame.characters.count
+                self.emptyInitializer = String(repeating : "_ ", count : self.numberOfCharactersInWord)
+                self.wordInUse.text = self.emptyInitializer
+                self.changingArrayForWord = [Character](self.emptyInitializer.characters)
+                self.resultDisplayer.text = ""
+            }
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
         }
     }
     
