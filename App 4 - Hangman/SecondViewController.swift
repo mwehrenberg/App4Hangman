@@ -43,12 +43,20 @@ class SecondViewController: UIViewController {
     }
     
     func testForLetterInWord(givenLetter : Character) {
+        for (index, element) in currentWordLetters.enumerated() {
+            if element == givenLetter {
+                changingArrayForWord[index * 2] = givenLetter
+                wordInUse.text = String(changingArrayForWord)
+            }
+            else {
+                //do nothing
+            }
+        }
+    }
+    
+    func testForNotInWordAtAll(givenLetter : Character){
         if currentWordLetters.contains(givenLetter){
-            indexOfLetterChosen = currentWordLetters.index(of: givenLetter)!
-            print(indexOfLetterChosen)
-            changingArrayForWord[indexOfLetterChosen * 2] = givenLetter
-            wordInUse.text = String(changingArrayForWord)
-            print(changingArrayForWord)
+            //do nothing
         }
         else {
             if hangerView.image == UIImage(named: "Hangman-0") {
@@ -114,106 +122,132 @@ class SecondViewController: UIViewController {
     
     @IBAction func onQ(_ sender: Any) {
         testForLetterInWord(givenLetter: "Q")
+        testForNotInWordAtAll(givenLetter: "Q")
         testForFinishedWord()
     }
     @IBAction func onW(_ sender: Any) {
         testForLetterInWord(givenLetter: "W")
+        testForNotInWordAtAll(givenLetter: "W")
         testForFinishedWord()
     }
     @IBAction func onE(_ sender: Any) {
         testForLetterInWord(givenLetter: "E")
+        testForNotInWordAtAll(givenLetter: "E")
         testForFinishedWord()
     }
     @IBAction func onR(_ sender: Any) {
         testForLetterInWord(givenLetter: "R")
+        testForNotInWordAtAll(givenLetter: "R")
         testForFinishedWord()
     }
     @IBAction func onT(_ sender: Any) {
         testForLetterInWord(givenLetter: "T")
+        testForNotInWordAtAll(givenLetter: "T")
         testForFinishedWord()
     }
     @IBAction func onY(_ sender: Any) {
         testForLetterInWord(givenLetter: "Y")
+        testForNotInWordAtAll(givenLetter: "Y")
         testForFinishedWord()
     }
     @IBAction func onU(_ sender: Any) {
         testForLetterInWord(givenLetter: "U")
+        testForNotInWordAtAll(givenLetter: "U")
         testForFinishedWord()
     }
     @IBAction func onI(_ sender: Any) {
         testForLetterInWord(givenLetter: "I")
+        testForNotInWordAtAll(givenLetter: "I")
         testForFinishedWord()
     }
     @IBAction func onO(_ sender: Any) {
         testForLetterInWord(givenLetter: "O")
+        testForNotInWordAtAll(givenLetter: "O")
         testForFinishedWord()
     }
     @IBAction func onP(_ sender: Any) {
         testForLetterInWord(givenLetter: "P")
+        testForNotInWordAtAll(givenLetter: "P")
         testForFinishedWord()
     }
     @IBAction func onA(_ sender: Any) {
         testForLetterInWord(givenLetter: "A")
+        testForNotInWordAtAll(givenLetter: "A")
         testForFinishedWord()
     }
     @IBAction func onS(_ sender: Any) {
         testForLetterInWord(givenLetter: "S")
+        testForNotInWordAtAll(givenLetter: "S")
         testForFinishedWord()
     }
     @IBAction func onD(_ sender: Any) {
         testForLetterInWord(givenLetter: "D")
+        testForNotInWordAtAll(givenLetter: "D")
         testForFinishedWord()
     }
     @IBAction func onF(_ sender: Any) {
         testForLetterInWord(givenLetter: "F")
+        testForNotInWordAtAll(givenLetter: "F")
         testForFinishedWord()
     }
     @IBAction func onG(_ sender: Any) {
         testForLetterInWord(givenLetter: "G")
+        testForNotInWordAtAll(givenLetter: "G")
         testForFinishedWord()
     }
     @IBAction func onH(_ sender: Any) {
         testForLetterInWord(givenLetter: "H")
+        testForNotInWordAtAll(givenLetter: "H")
         testForFinishedWord()
     }
     @IBAction func onJ(_ sender: Any) {
         testForLetterInWord(givenLetter: "J")
+        testForNotInWordAtAll(givenLetter: "J")
         testForFinishedWord()
     }
     @IBAction func onK(_ sender: Any) {
         testForLetterInWord(givenLetter: "K")
+        testForNotInWordAtAll(givenLetter: "K")
         testForFinishedWord()
     }
     @IBAction func onL(_ sender: Any) {
         testForLetterInWord(givenLetter: "L")
+        testForNotInWordAtAll(givenLetter: "L")
         testForFinishedWord()
     }
     @IBAction func onZ(_ sender: Any) {
         testForLetterInWord(givenLetter: "Z")
+        testForNotInWordAtAll(givenLetter: "Z")
         testForFinishedWord()
     }
     @IBAction func onX(_ sender: Any) {
         testForLetterInWord(givenLetter: "X")
+        testForNotInWordAtAll(givenLetter: "X")
         testForFinishedWord()
     }
     @IBAction func onC(_ sender: Any) {
         testForLetterInWord(givenLetter: "C")
+        testForNotInWordAtAll(givenLetter: "C")
         testForFinishedWord()
     }
     @IBAction func onV(_ sender: Any) {
         testForLetterInWord(givenLetter: "V")
+        testForNotInWordAtAll(givenLetter: "V")
         testForFinishedWord()
     }
     @IBAction func onB(_ sender: Any) {
         testForLetterInWord(givenLetter: "B")
+        testForNotInWordAtAll(givenLetter: "B")
         testForFinishedWord()
     }
     @IBAction func onN(_ sender: Any) {
         testForLetterInWord(givenLetter: "N")
+        testForNotInWordAtAll(givenLetter: "N")
         testForFinishedWord()
     }
     @IBAction func onM(_ sender: Any) {
         testForLetterInWord(givenLetter: "M")
+        testForNotInWordAtAll(givenLetter: "M")
         testForFinishedWord()
     }
     
