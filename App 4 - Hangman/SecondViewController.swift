@@ -43,56 +43,47 @@ class SecondViewController: UIViewController {
     }
     
     func testForLetterInWord(givenLetter : Character) {
-        //        if currentWordLetters.contains(givenLetter){
-        //            indexOfLetterChosen = currentWordLetters.index(of: givenLetter)!
-        //            print(indexOfLetterChosen)
-        //            changingArrayForWord[indexOfLetterChosen * 2] = givenLetter
-        //            wordInUse.text = String(changingArrayForWord)
-        //            print(changingArrayForWord)
-        //            }
-        
-        for letter in currentWordLetters{
-            if letter == givenLetter {
-                indexOfLetterChosen = currentWordLetters.index(of: givenLetter)!
-                changingArrayForWord[indexOfLetterChosen * 2] = givenLetter
-                wordInUse.text = String(changingArrayForWord)
-                print(changingArrayForWord)
+        if currentWordLetters.contains(givenLetter){
+            indexOfLetterChosen = currentWordLetters.index(of: givenLetter)!
+            print(indexOfLetterChosen)
+            changingArrayForWord[indexOfLetterChosen * 2] = givenLetter
+            wordInUse.text = String(changingArrayForWord)
+            print(changingArrayForWord)
+        }
+        else {
+            if hangerView.image == UIImage(named: "Hangman-0") {
+                hangerView.image = UIImage(named: "Hangman-1")
             }
-            else {
-                if hangerView.image == UIImage(named: "Hangman-0") {
-                    hangerView.image = UIImage(named: "Hangman-1")
+            else if hangerView.image == UIImage(named: "Hangman-1") {
+                hangerView.image = UIImage(named: "Hangman-2")
+            }
+            else if hangerView.image == UIImage(named: "Hangman-2") {
+                hangerView.image = UIImage(named: "Hangman-3")
+            }
+            else if hangerView.image == UIImage(named: "Hangman-3") {
+                hangerView.image = UIImage(named: "Hangman-4")
+            }
+            else if hangerView.image == UIImage(named: "Hangman-4") {
+                hangerView.image = UIImage(named: "Hangman-5")
+            }
+            else if hangerView.image == UIImage(named: "Hangman-5") {
+                hangerView.image = UIImage(named: "Hangman-6")
+                resultDisplayer.text = "Game Over"
+                let alert = UIAlertController(title: "Game Over. Play again?", message: nil, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                    self.hangerView.image = UIImage(named: "Hangman-0")
+                    self.randomIndex = Int(arc4random_uniform(UInt32(self.wordGenerator.count)))
+                    self.wordUsedForCurrentGame = self.wordGenerator[self.randomIndex]
+                    self.currentWordLetters = [Character](self.wordUsedForCurrentGame.characters)
+                    print(self.currentWordLetters)
+                    self.numberOfCharactersInWord = self.wordUsedForCurrentGame.characters.count
+                    self.emptyInitializer = String(repeating : "_ ", count : self.numberOfCharactersInWord)
+                    self.wordInUse.text = self.emptyInitializer
+                    self.changingArrayForWord = [Character](self.emptyInitializer.characters)
+                    self.resultDisplayer.text = ""
                 }
-                else if hangerView.image == UIImage(named: "Hangman-1") {
-                    hangerView.image = UIImage(named: "Hangman-2")
-                }
-                else if hangerView.image == UIImage(named: "Hangman-2") {
-                    hangerView.image = UIImage(named: "Hangman-3")
-                }
-                else if hangerView.image == UIImage(named: "Hangman-3") {
-                    hangerView.image = UIImage(named: "Hangman-4")
-                }
-                else if hangerView.image == UIImage(named: "Hangman-4") {
-                    hangerView.image = UIImage(named: "Hangman-5")
-                }
-                else if hangerView.image == UIImage(named: "Hangman-5") {
-                    hangerView.image = UIImage(named: "Hangman-6")
-                    resultDisplayer.text = "Game Over"
-                    let alert = UIAlertController(title: "Game Over. Play again?", message: nil, preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
-                        self.hangerView.image = UIImage(named: "Hangman-0")
-                        self.randomIndex = Int(arc4random_uniform(UInt32(self.wordGenerator.count)))
-                        self.wordUsedForCurrentGame = self.wordGenerator[self.randomIndex]
-                        self.currentWordLetters = [Character](self.wordUsedForCurrentGame.characters)
-                        print(self.currentWordLetters)
-                        self.numberOfCharactersInWord = self.wordUsedForCurrentGame.characters.count
-                        self.emptyInitializer = String(repeating : "_ ", count : self.numberOfCharactersInWord)
-                        self.wordInUse.text = self.emptyInitializer
-                        self.changingArrayForWord = [Character](self.emptyInitializer.characters)
-                        self.resultDisplayer.text = ""
-                    }
-                    alert.addAction(okAction)
-                    present(alert, animated: true, completion: nil)
-                }
+                alert.addAction(okAction)
+                present(alert, animated: true, completion: nil)
             }
         }
     }
