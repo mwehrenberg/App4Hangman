@@ -92,17 +92,16 @@ class SecondViewController: UIViewController {
     }
     
     func resetBoard(){
-        self.hangerView.image = UIImage(named: "Hangman-0")
-        self.randomIndex = Int(arc4random_uniform(UInt32(self.wordGenerator.count)))
-        self.wordUsedForCurrentGame = self.wordGenerator[self.randomIndex]
-        self.currentWordLetters = [Character](self.wordUsedForCurrentGame.characters)
-        print(self.currentWordLetters)
-        self.numberOfCharactersInWord = self.wordUsedForCurrentGame.characters.count
-        self.emptyInitializer = String(repeating : "_ ", count : self.numberOfCharactersInWord)
-        self.wordInUse.text = self.emptyInitializer
-        self.changingArrayForWord = [Character](self.emptyInitializer.characters)
-        self.resultDisplayer.text = ""
-        self.lettersAlreadyGuessed.text = ""
+        hangerView.image = UIImage(named: "Hangman-0")
+        randomIndex = Int(arc4random_uniform(UInt32(self.wordGenerator.count)))
+        wordUsedForCurrentGame = self.wordGenerator[self.randomIndex]
+        currentWordLetters = [Character](self.wordUsedForCurrentGame.characters)
+        numberOfCharactersInWord = self.wordUsedForCurrentGame.characters.count
+        emptyInitializer = String(repeating : "_ ", count : self.numberOfCharactersInWord)
+        wordInUse.text = self.emptyInitializer
+        changingArrayForWord = [Character](self.emptyInitializer.characters)
+        resultDisplayer.text = ""
+        lettersAlreadyGuessed.text = ""
     }
     
     func testForFinishedWord() {
@@ -113,17 +112,7 @@ class SecondViewController: UIViewController {
             resultDisplayer.text = wordUsedForCurrentGame
             let alert = UIAlertController(title: "You win! Play again?", message: nil, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
-                self.hangerView.image = UIImage(named: "Hangman-0")
-                self.randomIndex = Int(arc4random_uniform(UInt32(self.wordGenerator.count)))
-                self.wordUsedForCurrentGame = self.wordGenerator[self.randomIndex]
-                self.currentWordLetters = [Character](self.wordUsedForCurrentGame.characters)
-                print(self.currentWordLetters)
-                self.numberOfCharactersInWord = self.wordUsedForCurrentGame.characters.count
-                self.emptyInitializer = String(repeating : "_ ", count : self.numberOfCharactersInWord)
-                self.wordInUse.text = self.emptyInitializer
-                self.changingArrayForWord = [Character](self.emptyInitializer.characters)
-                self.resultDisplayer.text = ""
-                self.lettersAlreadyGuessed.text = ""
+                self.resetBoard()
             }
             alert.addAction(okAction)
             present(alert, animated: true, completion: nil)
